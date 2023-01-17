@@ -6,6 +6,8 @@ namespace MVCForTraining.Controllers
 {
     public class HomeController : Controller
     {
+        
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -17,6 +19,13 @@ namespace MVCForTraining.Controllers
         {
             return View();
         }
+
+        public IActionResult Example()
+        {
+            return View();
+        }
+                   
+              
 
         public IActionResult Privacy()
         {
