@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace MVCForTraining.Controllers
 {
+    
     public class HomeController : Controller
     {
         
@@ -15,14 +16,15 @@ namespace MVCForTraining.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public string Index() => "Index Page";
 
+
+
+
+        
         public IActionResult Example()
         {
-            return View();
+            return Content("Example site");
         }
                    
               

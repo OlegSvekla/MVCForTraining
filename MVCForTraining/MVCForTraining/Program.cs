@@ -22,6 +22,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -34,5 +36,5 @@ public interface ITimeService
 }
 public class SimpleTimeService : ITimeService
 {
-    public string Time => DateTime.Now.ToString("hh:mm:ss");
+    public string Time => DateTime.Now.ToShortTimeString();
 }
