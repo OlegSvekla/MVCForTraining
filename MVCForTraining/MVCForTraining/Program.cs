@@ -1,7 +1,20 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using MVCForTraining.Models;
 var builder = WebApplication.CreateBuilder(args);
 
+// For Entity Framework
+var configuration = builder.Configuration;
+builder.Services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+// For Identity
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationContext>();
+
 // Add services to the container.
-builder.Services.AddMvc();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -18,6 +31,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
