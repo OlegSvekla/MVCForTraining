@@ -1,7 +1,10 @@
+
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using MVCForTraining.Models;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // For Entity Framework
