@@ -14,17 +14,9 @@ namespace MVCForTraining.Controllers
             _logger = logger;
         }
 
-        public async Task Index()
+        public IActionResult Index()
         {
-            string content = @"<form method='post' action='/Home/PersonData'>
-                   <label>Name:</label><br />
-                <input name='name' /><br />
-                <label>Age:</label><br />
-                <input type='number' name='age' /><br />
-                <input type='submit' value='Send' />
-            </form>";
-            Response.ContentType = "text/html;charset=utf-8";
-            await Response.WriteAsync(content);
+            return View();
         }
         [HttpPost]
         public string PersonData()

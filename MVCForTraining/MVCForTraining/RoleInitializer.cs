@@ -13,9 +13,9 @@ namespace MVCForTraining
             {
                 await roleManager.CreateAsync(new IdentityRole("admin"));
             }
-            if (await roleManager.FindByNameAsync("employee") == null)
+            if (await roleManager.FindByNameAsync("user") == null)
             {
-                await roleManager.CreateAsync(new IdentityRole("employee"));
+                await roleManager.CreateAsync(new IdentityRole("user"));
             }
             if (await userManager.FindByNameAsync(adminEmail) == null)
             {

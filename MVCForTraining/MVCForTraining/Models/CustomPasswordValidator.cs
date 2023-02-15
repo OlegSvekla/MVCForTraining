@@ -5,7 +5,7 @@ namespace MVCForTraining.Models
 {
     public class CustomPasswordValidator : IPasswordValidator<User>
     {
-        public int RequiredLength { get; set; } // минимальная длина
+        public int RequiredLength { get; set; } 
 
         public CustomPasswordValidator(int length)
         {
