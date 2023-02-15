@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCForTraining.Models
 {
-    public class RegisterModel
+    public class RegisterModel 
     {
         [Required(ErrorMessage = "Enter a name")]
         [MaxLength(20, ErrorMessage = "The name must be less than 20 characters long")]
@@ -12,6 +13,8 @@ namespace MVCForTraining.Models
         public string Username { get; set; }
 
         public string ConfirmEmail { get; set; }
+
+        public UserRole Role { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Enter a password")]
