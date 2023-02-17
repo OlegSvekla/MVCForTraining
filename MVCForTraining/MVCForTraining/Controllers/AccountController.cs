@@ -25,7 +25,17 @@ namespace MVCForTraining.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.Email, Year = model.Year };
+                User user = new User
+                {
+                    Email = model.Email,
+                    
+                    UserName = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Age = model.Age,
+                    PhoneNumber = model.PhoneNumber,
+                    //CreditCard = model.CreditCard
+                };
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

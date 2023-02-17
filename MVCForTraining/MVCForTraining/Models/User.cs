@@ -4,6 +4,14 @@ namespace MVCForTraining.Models
 {
     public class User : IdentityUser
     {
-        public int Year { get; set; }
+        public int Age { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        //public int CreditCard { get; set; }
+
+        
     }
 }

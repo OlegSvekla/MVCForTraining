@@ -17,8 +17,7 @@ builder.Services.AddIdentity<User, IdentityRole>(opts => {
     opts.Password.RequireLowercase = false; 
     opts.Password.RequireUppercase = false; 
     opts.Password.RequireDigit = false; 
-    opts.User.RequireUniqueEmail = true;    
-    opts.User.AllowedUserNameCharacters = ".@abcdefghijklmnopqrstuvwxyz"; 
+    
 })
     .AddEntityFrameworkStores<ApplicationContext>();
 
