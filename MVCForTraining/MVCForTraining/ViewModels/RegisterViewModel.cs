@@ -21,10 +21,7 @@ namespace MVCForTraining.ViewModels
         [Display(Name = "LastName")]
         public string LastName { get; set; }
 
-        [EmailAddress]
-        [Required(ErrorMessage = "Email is required.")]
-        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$",
-            ErrorMessage = "E-mail is not valid")]
+        [EmailAddress]        
         [Display(Name = "Email")]
         public string Email { get; set; }
 
